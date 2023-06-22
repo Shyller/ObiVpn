@@ -136,15 +136,15 @@ function installWireGuard() {
 		if [[ ${BOT_AUTO_INSTALL} == '1' ]]; then
 			apt-get install unzip
 			apt-get install python3-pip -y
-			wget https://github.com/Obi0Wan0Kenobi/ObiVpn/archive/refs/heads/master.zip
+			wget https://github.com/Shyller/ObiVpn/archive/refs/heads/master.zip
 			unzip master.zip
 			rm master.zip
 			pip install -r "$(pwd)/ObiVpn-master/requirements.txt"
 			echo "{
 \"admin_tg_id\": ${ADMIN_ID_BOT},
-\"one_month_cost\": 120,
-\"trial_period\": 2700,
-\"UTC_time\": 3,
+\"one_month_cost\": 0,
+\"trial_period\": 315360000,
+\"UTC_time\": 4,
 \"tg_token\": \"${API_TOKEN_BOT}\",
 \"tg_shop_token\": \"${API_PAYMENT_BOT}\"
 }" >"$(pwd)/ObiVpn-master/config.json"
